@@ -29,7 +29,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
     border-radius: 5px;
     padding: 10px 16px;
     color: black;
@@ -46,10 +46,11 @@ p {
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     padding: 0rem 5rem;
 }
 
