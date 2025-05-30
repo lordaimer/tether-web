@@ -20,18 +20,35 @@
     <div>
       <p>Host Minecraft<br><span>Anytime, Anywhere!</span></p>
     </div>
-<div class="buttons-container">
-  <a href="download.html" class="button">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-         viewBox="0 0 24 24" stroke-width="1.5" stroke="#121212"
-         width="20" height="20" style="flex-shrink: 0;">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-    </svg>
-    Download Now
-  </a>
-</div>
-
+  <div class="dropdown">
+    <button class="button dropdown-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke-width="1.5" stroke="#121212"
+          width="20" height="20" style="flex-shrink: 0;">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+      </svg>
+      Download Now
+    </button>
+      <div class="dropdown-menu button">
+        <a href="downloads/windows-64.exe">Windows 64-bit</a>
+        <a href="downloads/windows-32.exe">Windows 32-bit</a>
+      </div>
+    </div>
   </div>
+  <script>
+  document.querySelector('.dropdown-toggle').addEventListener('click', () => {
+    const menu = document.querySelector('.dropdown-menu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Optional: Close on click outside
+  window.addEventListener('click', (e) => {
+    const dropdown = document.querySelector('.dropdown');
+    if (!dropdown.contains(e.target)) {
+      document.querySelector('.dropdown-menu').style.display = 'none';
+    }
+  });
+</script>
 </body>
 </html>
