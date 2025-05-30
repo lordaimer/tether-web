@@ -57,3 +57,7 @@ p {
     display: flex;
     gap: 1.5rem;
 }
+
+svg {
+  background-color: transparent;
+}
